@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 
-//mongoose.Promise = global.Promise;
-URI =('mongodb://localhost/ensayo')
+mongoose.Promise = global.Promise;
+URI =('mongodb://localhost:27017/ensayo')
 
 
 mongoose.connect(URI,{
@@ -10,6 +10,6 @@ mongoose.connect(URI,{
     useUnifiedTopology: true
    
 })
-.then(db=>console.log('base de datos conectada'))
+.then(()=>console.log('base de datos conectada'))
 .catch(error=>console.log(error))
 module.exports=mongoose
